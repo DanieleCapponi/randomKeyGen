@@ -22,33 +22,33 @@ keygen() {
 
 
 for opt in $@; do
-        if [[ $next == '-l' ]]; then
-            length=$opt
-			next=''
-        elif [[ $next == '-n' ]]; then
-			keynum=$opt
-			next=''
-		fi
+    if [[ $next == '-l' ]]; then
+        length=$opt
+		next=''
+    elif [[ $next == '-n' ]]; then
+		keynum=$opt
+		next=''
+	fi
 
-        if [[ $opt == '-h' || $opt == '--human' ]]; then
-                human=true
-        elif [[ $opt == '-l' || $opt == '--length' ]]; then
-                next='-l'
-        elif [[ $opt == '-n' || $opt == '--number' ]]; then
-				next='-n'
-		elif [[ $opt == '?' || $opt == '--help' ]]; then
-                echo -e "Random Key Generator"
-                echo -e "\t-l, --length      Specify key length, default is 16"
-                echo -e "\t-n, --number      Specify how many keys you want to create"
-				echo -e "\t-h, --human       Human-readable key, no symbols"
-                echo -e "\t ?, --help        Print this help message"
-                exit
-        fi
+    if [[ $opt == '-h' || $opt == '--human' ]]; then
+            human=true
+    elif [[ $opt == '-l' || $opt == '--length' ]]; then
+            next='-l'
+    elif [[ $opt == '-n' || $opt == '--number' ]]; then
+			next='-n'
+	elif [[ $opt == '?' || $opt == '--help' ]]; then
+        echo -e "Random Key Generator"
+        echo -e "\t-l, --length      Specify key length, default is 16"
+        echo -e "\t-n, --number      Specify how many keys you want to create"
+		echo -e "\t-h, --human       Human-readable key, no symbols"
+        echo -e "\t ?, --help        Print this help message"
+        exit
+    fi
 done
 
 dictionary="$alpha$ALPHA$numbers$symbols$numbers$ALPHA$alpha"
 if [[ $human == true ]]; then
-        dictionary="$alpha$ALPHA$numbers$numbers$ALPHA$alpha"
+    dictionary="$alpha$ALPHA$numbers$numbers$ALPHA$alpha"
 fi
 
 for j in $(seq 1 $keynum); do
