@@ -7,7 +7,7 @@ if [[ $(cat ~/.bash_aliases | grep 'pw') == '' ]]; then
 		[[ $? == 0 ]] && echo "randomKeyGen succesfully installed. Run 'pw --help'" \
 					  || echo "Couldn't install randomKeyGen, exit"
 	else
-		echo "You must be in progect directory and run ./keygen.sh"
+		echo "You must be in project directory and run ./keygen.sh"
 	fi
 else
 	echo "Seems like randomKeyGen is already installed. Run 'pw --help'"
