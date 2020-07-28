@@ -24,11 +24,11 @@ keygen() {
 for opt in $@; do
     if [[ $next == '-l' ]]; then
         length=$opt
-		next=''
+	next=''
     elif [[ $next == '-n' ]]; then
-		keynum=$opt
-		next=''
-	fi
+	keynum=$opt
+	next=''
+    fi
 
     if [[ $opt == '-h' || $opt == '--human' ]]; then
             human=true
@@ -37,11 +37,11 @@ for opt in $@; do
     elif [[ $opt == '-n' || $opt == '--number' ]]; then
 			next='-n'
 	elif [[ $opt == '?' || $opt == '--help' ]]; then
-        echo -e "Random Key Generator"
-        echo -e "\t-l, --length      Specify key length, default is 16"
-        echo -e "\t-n, --number      Specify how many keys you want to create"
-		echo -e "\t-h, --human       Human-readable key, no symbols"
-        echo -e "\t ?, --help        Print this help message"
+            echo -e "Random Key Generator"
+            echo -e "\t-l, --length      Specify key length, default is 16"
+            echo -e "\t-n, --number      Specify how many keys you want to create"
+	    echo -e "\t-h, --human       Human-readable key, no symbols"
+            echo -e "\t ?, --help        Print this help message"
         exit
     fi
 done
@@ -52,5 +52,5 @@ if [[ $human == true ]]; then
 fi
 
 for j in $(seq 1 $keynum); do
-	keygen $dictionary
+    keygen $dictionary
 done
