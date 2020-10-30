@@ -3,6 +3,8 @@
 alpha=abcdefghijklmnopqrstuvwxyz
 ALPHA=ABCDEFGHIJKLMNOPQRSTUVWXYZ
 symbols='.:-_#@[+]|!^?"<>£$%&/()='
+numbers='123456789'
+
 
 length=16
 keynum=1
